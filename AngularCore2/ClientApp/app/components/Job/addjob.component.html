@@ -1,0 +1,36 @@
+﻿<h2>Add Developer Job</h2>
+
+<div class="container">
+
+    <form (ngSubmit)="onSubmit()" #developerJobForm="ngForm" novalidate>
+
+        <div class="form-group row">
+            <div class="col-md-5">
+                <input type="text" class="form-control" id="jobTitle" name="jobTitle" [(ngModel)]="devJob.JobTitle" #JobTitle="ngModel" required placeholder="Job Title" />
+                <div class="alert alert-danger" [hidden]="JobTitle.isValid || JobTitle.pristine">
+                    Job Title is required
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-md-5">
+                <input type="text" class="form-control" id="companyName" name="companyName" [(ngModel)]="devJob.CompanyName" #CompanyName="ngModel" required placeholder="Company Name" />
+                <div class="alert alert-danger" [hidden]="CompanyName.isValid || CompanyName.pristine">
+                    Company Name is required
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-md-5">
+                <input type="text" class="form-control" id="address1" name="address1" [(ngModel)]="devJob.CompanyAddress.Address1" #Address1="ngModel" required placeholder="Company Address" />
+                <div class="alert alert-danger" [hidden]="Address1.isValid || Address1.pristine">
+                    Address1 is required
+                </div>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary" [disabled]="!developerJobForm.form.valid">Add Developer Job</button>
+        <button class="btn btn-link">Reset</button>
+    </form>
+
+</div>

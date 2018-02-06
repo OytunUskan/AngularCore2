@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.5" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.2" />
   </ItemGroup>
 
   <ItemGroup>
@@ -18,6 +19,70 @@
   <ItemGroup>
     <!-- Files not to publish (note that the 'dist' subfolders are re-added below) -->
     <Content Remove="ClientApp\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="ClientApp\app\components\interfaces\ICompanyAddress - Copy.js.map" />
+    <None Remove="ClientApp\app\components\interfaces\ICompanyAddress.ts" />
+    <None Remove="ClientApp\app\components\interfaces\ICompanyType.ts" />
+    <None Remove="ClientApp\app\components\interfaces\IDeveloperJob.ts" />
+    <None Remove="ClientApp\app\components\interfaces\IIndustryType.ts" />
+    <None Remove="ClientApp\app\components\interfaces\IJobType.ts" />
+    <None Remove="ClientApp\app\components\Job\addjob.component.ts" />
+    <None Remove="ClientApp\app\models\CompanyAddress.ts" />
+    <None Remove="ClientApp\app\models\CompanyType.js.map" />
+    <None Remove="ClientApp\app\models\CompanyType.ts" />
+    <None Remove="ClientApp\app\models\DeveloperJob.ts" />
+    <None Remove="ClientApp\app\models\IndustryType.ts" />
+    <None Remove="ClientApp\app\models\JobType.js.map" />
+    <None Remove="ClientApp\app\models\JobType.ts" />
+    <None Remove="ClientApp\app\services\developerdatajobservice.ts" />
+    <None Remove="Migrations\IndustryDump.sql" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\app\components\interfaces\IDeveloperJob.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\interfaces\ICompanyAddress.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\interfaces\ICompanyType.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\interfaces\IIndustryType.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\interfaces\IJobType.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\Job\addjob.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\models\DeveloperJob.ts" />
+    <TypeScriptCompile Include="ClientApp\app\models\CompanyAddress.ts" />
+    <TypeScriptCompile Include="ClientApp\app\models\JobType.ts" />
+    <TypeScriptCompile Include="ClientApp\app\models\CompanyType.ts" />
+    <TypeScriptCompile Include="ClientApp\app\models\IndustryType.ts" />
+    <TypeScriptCompile Include="ClientApp\app\services\developerdatajobservice.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="ClientApp\app\components\interfaces\IDeveloperJob.js">
+      <DependentUpon>IDeveloperJob.ts</DependentUpon>
+    </None>
+    <None Update="ClientApp\app\components\interfaces\ICompanyType - Copy.js">
+      <DependentUpon>ICompanyType.ts</DependentUpon>
+    </None>
+    <None Update="ClientApp\app\components\interfaces\ICompanyType.js">
+      <DependentUpon>ICompanyType.ts</DependentUpon>
+    </None>
+    <None Update="ClientApp\app\components\interfaces\IJobType.js">
+      <DependentUpon>IJobType.ts</DependentUpon>
+    </None>
+    <None Update="ClientApp\app\models\DeveloperJob.js">
+      <DependentUpon>DeveloperJob.ts</DependentUpon>
+    </None>
+    <None Update="ClientApp\app\models\DeveloperJob.js.map">
+      <DependentUpon>DeveloperJob.js</DependentUpon>
+    </None>
+    <None Update="ClientApp\app\models\CompanyType - Copy.js">
+      <DependentUpon>CompanyType.ts</DependentUpon>
+    </None>
+    <None Update="ClientApp\app\models\JobType.js">
+      <DependentUpon>JobType.ts</DependentUpon>
+    </None>
+    <None Update="ClientApp\app\models\CompanyType.js">
+      <DependentUpon>CompanyType.ts</DependentUpon>
+    </None>
   </ItemGroup>
 
   <Target Name="DebugRunWebpack" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('wwwroot\dist') ">
